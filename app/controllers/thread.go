@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"fmt"
-	//"github.com/sausheong/gwp/Chapter_2_Go_ChitChat/chitchat/data"
 	. "chitchat_mvc/app/utils"
 	"chitchat_mvc/app/models"	
 	"net/http"

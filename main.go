@@ -8,7 +8,8 @@ import (
 )
 
 func main() {
-	 P("===", GetCurrentDirectory(),Config.DbDriverName)
+	
+	Info("===", GetCurrentDirectory(),Config.DbDriverName)
 	 P("ChitChat",  Version(), "started at",  Config.Address)
 
 	// handle static assets

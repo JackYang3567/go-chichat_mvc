@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	//"github.com/sausheong/gwp/Chapter_2_Go_ChitChat/chitchat/data"
 	"chitchat_mvc/app/models"	
 	"html/template"
 	"log"
@@ -31,7 +30,7 @@ var logger *log.Logger
 
 func init() {
 	loadConfig()
-	file, err := os.OpenFile("chitchat.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	file, err := os.OpenFile("log.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		log.Fatalln("Failed to open log file", err)
 	}
@@ -120,16 +119,25 @@ func GenerateHTML(writer http.ResponseWriter, data interface{}, filenames ...str
 }
 
 // for logging
+/*
+ 调试输出信息写入文件
+*/
 func Info(args ...interface{}) {
 	logger.SetPrefix("INFO ")
 	logger.Println(args...)
 }
 
+/*
+ 错误日志信息写入文件
+*/
 func Danger(args ...interface{}) {
 	logger.SetPrefix("ERROR ")
 	logger.Println(args...)
 }
 
+/*
+ 错误日志信息写入文件
+*/
 func Warning(args ...interface{}) {
 	logger.SetPrefix("WARNING ")
 	logger.Println(args...)
